@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/questionnaire
+    username: postgres
+    password: user
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/auth/realms/questionnaire
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+server:
+  port: 8081
